@@ -1,0 +1,1333 @@
+<!doctype html><html><head>
+<meta charset="utf-8">
+<title>Markdoc Preview</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* mscore */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+}
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #2a6496;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+figure {
+  margin: 0;
+}
+img {
+  vertical-align: middle;
+}
+
+/*
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #f0f0f0;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs,
+.hljs-subst,
+.hljs-tag .hljs-title,
+.nginx .hljs-title {
+  color: black;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-constant,
+.hljs-parent,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.hljs-preprocessor,
+.hljs-pragma,
+.haml .hljs-symbol,
+.ruby .hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-template_tag,
+.django .hljs-variable,
+.smalltalk .hljs-class,
+.hljs-addition,
+.hljs-flow,
+.hljs-stream,
+.bash .hljs-variable,
+.apache .hljs-tag,
+.apache .hljs-cbracket,
+.tex .hljs-command,
+.tex .hljs-special,
+.erlang_repl .hljs-function_or_atom,
+.asciidoc .hljs-header,
+.markdown .hljs-header,
+.coffeescript .hljs-attribute {
+  color: #800;
+}
+
+.smartquote,
+.hljs-comment,
+.hljs-annotation,
+.diff .hljs-header,
+.hljs-chunk,
+.asciidoc .hljs-blockquote,
+.markdown .hljs-blockquote {
+  color: #888;
+}
+
+.hljs-number,
+.hljs-date,
+.hljs-regexp,
+.hljs-literal,
+.hljs-hexcolor,
+.smalltalk .hljs-symbol,
+.smalltalk .hljs-char,
+.go .hljs-constant,
+.hljs-change,
+.lasso .hljs-variable,
+.makefile .hljs-variable,
+.asciidoc .hljs-bullet,
+.markdown .hljs-bullet,
+.asciidoc .hljs-link_url,
+.markdown .hljs-link_url {
+  color: #080;
+}
+
+.hljs-label,
+.hljs-javadoc,
+.ruby .hljs-string,
+.hljs-decorator,
+.hljs-filter .hljs-argument,
+.hljs-localvars,
+.hljs-array,
+.hljs-attr_selector,
+.hljs-important,
+.hljs-pseudo,
+.hljs-pi,
+.haml .hljs-bullet,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-envvar,
+.hljs-shebang,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in,
+.tex .hljs-formula,
+.erlang_repl .hljs-reserved,
+.hljs-prompt,
+.asciidoc .hljs-link_label,
+.markdown .hljs-link_label,
+.vhdl .hljs-attribute,
+.clojure .hljs-attribute,
+.asciidoc .hljs-attribute,
+.lasso .hljs-attribute,
+.coffeescript .hljs-property,
+.hljs-phony {
+  color: #88f;
+}
+
+.hljs-keyword,
+.hljs-id,
+.hljs-title,
+.hljs-built_in,
+.css .hljs-tag,
+.hljs-javadoctag,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.hljs-yardoctag,
+.smalltalk .hljs-class,
+.hljs-winutils,
+.bash .hljs-variable,
+.apache .hljs-tag,
+.hljs-type,
+.hljs-typename,
+.tex .hljs-command,
+.asciidoc .hljs-strong,
+.markdown .hljs-strong,
+.hljs-request,
+.hljs-status {
+  font-weight: bold;
+}
+
+.asciidoc .hljs-emphasis,
+.markdown .hljs-emphasis {
+  font-style: italic;
+}
+
+.nginx .hljs-built_in {
+  font-weight: normal;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.lasso .markup,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5;
+}
+#container {
+  padding: 15px;
+  margin-left:20px;
+}
+pre {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block;
+}
+pre code {
+  white-space: pre-wrap;
+}
+.hljs,
+code {
+  font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+}
+
+pre{
+  background-color: #dddddd;
+  padding:8px 0px 8px 30px;
+  word-wrap: break-word;
+}
+table tbody tr:nth-child(2n) {
+    background: rgba(158,188,226,0.12); 
+}
+:not(pre) > code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+}
+blockquote {
+    border-left-width: 10px;
+    background-color: rgba(102,128,153,0.05);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 1px 20px
+}
+blockquote.pull-right small:before,blockquote.pull-right .small:before {
+    content: ''
+}
+
+blockquote.pull-right small:after,blockquote.pull-right .small:after {
+    content: '\00A0 \2014'
+}
+
+blockquote:before,blockquote:after {
+    content: ""
+}
+blockquote {
+    margin: 0 0 1.1em
+}
+blockquote p {
+    margin-bottom: 1.1em;
+    font-size: 1em;
+    line-height: 1.45
+}
+
+blockquote ul:last-child,blockquote ol:last-child {
+    margin-bottom: 0
+}
+blockquote {
+    margin: 0 0 21px;
+    border-left: 10px solid #dddddd;
+}</style></head>
+<body>
+<div id="container"><h1 id="-">静态分析</h1>
+<p>Leah Hanson</p>
+<blockquote>
+<p>Leah Hanson是一名骄傲的黑客学校校友，他喜欢帮助人们了解Julia。他的博客地址是<a href="http://blog.leahhanson">http://blog.leahhanson</a> 以及推文 @astrieanna</p>
+</blockquote>
+<h2 id="-">简介</h2>
+<p>您可能熟悉一个在代码部分不编译的复杂的IDE。您可能已经在代码中运行了一个linter，以检查格式或样式问题。您可能会在所有警告打开的情况下运行您的编译器。所有这些工具都是静态分析的应用程序。</p>
+<p>静态分析是在不运行代码的情况下检查代码中的问题的一种方法。“静态”指的是编译时而不是运行时，而“分析”意味着我们正在分析代码。当你使用我上面提到的工具时，它可能就像魔法一样。但是这些工具只是程序，它们是由一个人编写的，像你这样的程序员编写的。在本章中，我们将讨论如何实现一些静态分析检查。为了做到这一点，我们需要知道我们想要做什么，以及我们想要做什么。</p>
+<p>我们可以通过把这个过程描述成三个阶段来了解你需要知道的东西。</p>
+<h3 id="1-">1、决定你想要检查的东西。</h3>
+<p>您应该能够解释您想要解决的一般问题，就像编程语言的用户所能识别的那样。例子包括:</p>
+<ul>
+<li>发现拼写错误的变量名</li>
+<li>在并行代码中查找竞争条件</li>
+<li>查找未实现函数的调用</li>
+</ul>
+<h3 id="2-">2、决定如何检查它。</h3>
+<p> 虽然我们可以让朋友做上面列出的任务之一，但他们还不够具体，无法向电脑解释。例如，为了处理“拼写错误的变量名”，我们需要决定这里的拼写错误。一种选择是声明变量名应该由字典中的英语单词组成;另一种选择是查找只使用一次的变量(在一次错误的情况下)。</p>
+<p> 如果我们知道我们在寻找只使用一次的变量，我们可以讨论各种变量的用法(它们的值被赋值与读取)，以及哪些代码将不会触发警告。</p>
+<h3 id="-">实现细节</h3>
+<p> 这包括编写代码的实际操作，花时间阅读您所使用的库的文档，以及如何获取您需要编写分析所需的信息。这可能涉及到读入一个代码文件，解析它以了解结构，然后对该结构进行详细的检查。</p>
+<p> 我们将为这一章中实现的每一个单独的检查而工作。第1步需要对我们分析的语言有足够的理解，以同情它的用户所面临的问题。这一章的所有代码都是茱莉亚代码，用来分析茱莉亚的代码。</p>
+<h2 id="-">对朱莉娅的简要介绍</h2>
+<p> 茱莉亚是一门针对技术计算的年轻语言。它在2012年春的版本0.1中发布;到2015年初，它已经达到了0.3版。总的来说，朱莉娅看起来很像Python，但是有一些可选的类型注解，没有任何面向对象的东西。大多数程序员在朱莉娅中发现的新特性是多重分派，它对API设计和语言的其他设计选择都有广泛的影响。</p>
+<p> 以下是茱莉亚的代码片段:</p>
+<pre><code><span class="hljs-comment"># A comment about increment</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span><span class="hljs-params">(x::Int64)</span>
+  <span class="hljs-title">return</span> <span class="hljs-title">x</span> + 1
+<span class="hljs-title">end</span>
+
+<span class="hljs-title">increment</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span></span>
+</code></pre><p>这段代码定义了函数增量的一种方法，该方法使用了一个名为x的参数，名为Int64。该方法返回x+1的值。然后，这个新定义的方法用值5调用;函数调用，正如您可能已经猜到的，将值为6。</p>
+<p>Int64是一种类型，它的值是在内存中由64位表示的整数;如果您的计算机有64位处理器，则是您的硬件理解的整数。除了影响方法调度外，朱莉娅还定义了内存中的数据表示。</p>
+<p>名称增量指的是一个泛型函数，它可能有很多方法。我们刚刚定义了一种方法。在许多语言中，术语“函数”和“方法”是可互换的;在朱莉娅中，它们具有不同的含义。如果您小心地理解“函数”作为一个命名的方法集合，那么这一章将更有意义，因为“方法”是特定类型签名的具体实现。</p>
+<p>让我们定义另一个增量函数的方法:</p>
+<pre><code><span class="hljs-comment"># Increment x by y</span>
+function increment(<span class="hljs-symbol">x:</span><span class="hljs-symbol">:Int64</span>, <span class="hljs-symbol">y:</span><span class="hljs-symbol">:Number</span>)
+  <span class="hljs-keyword">return</span> x + y
+<span class="hljs-keyword">end</span>
+
+increment(<span class="hljs-number">5</span>) <span class="hljs-comment"># =&gt; 6</span>
+increment(<span class="hljs-number">5</span>,<span class="hljs-number">4</span>) <span class="hljs-comment"># =&gt; 9</span>
+</code></pre><p>现在函数增量有两种方法。朱莉娅决定根据参数的数量和类型来为给定的调用运行哪种方法;这称为动态多分派:</p>
+<p>动态是因为它基于运行时使用的值的类型。</p>
+<p>因为它查看了所有参数的类型和顺序。</p>
+<p>调度，因为这是一种将函数调用与方法定义相匹配的方法。</p>
+<p>要将其放在您可能已经知道的语言环境中，面向对象的语言使用单一分派，因为它们只考虑第一个参数。(在x.foo(y)中，第一个参数是x。</p>
+<p>单个和多个分派都基于参数的类型。x::Int64是纯粹用于分派的类型注释。在朱莉娅的动态类型系统中，您可以在函数中分配任意类型的值，而不会出现错误。</p>
+<p>我们还没有看到“多”的部分，但是如果你对茱莉亚很好奇的话，你就得自己去看看。我们需要继续进行第一次检查。</p>
+<h2 id="-">检查循环中的变量类型</h2>
+<p>和大多数编程语言一样，在朱莉娅编写非常快的代码时，需要理解计算机是如何工作的，以及茱莉亚是如何工作的。帮助编译器为您创建快速代码的一个重要部分是编写类型稳定的代码;这在朱莉娅和JavaScript中很重要，并且在其他JIT语言中也很有用。当编译器可以看到代码段中的变量总是包含相同的类型时，编译器可以做更多的优化，而不是相信(正确与否)，这个变量有多种可能的类型。您可以阅读更多关于为什么类型稳定性(也称为“单态”)对于JavaScript在线来说很重要的原因。</p>
+<h3 id="-">为什么这很重要</h3>
+<p>让我们写一个函数，它需要一个Int64，并增加它的值。如果这个数很小(小于10)，让我们用一个大的数(50)来增加它，但是如果它很大，我们只把它增加到0。5。</p>
+<pre><code>function increment(<span class="hljs-symbol">x:</span><span class="hljs-symbol">:Int64</span>)
+  <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">10</span>
+    x = x + <span class="hljs-number">50</span>
+  <span class="hljs-keyword">else</span>
+    x = x + <span class="hljs-number">0</span>.<span class="hljs-number">5</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">return</span> x
+<span class="hljs-keyword">end</span>
+</code></pre><p>这个函数看起来很简单，但是x的类型是不稳定的。我选择了两个数字:50，一个Int64，和0.5，一个浮动64。取决于x的值，它可能会被添加到其中一个。如果你把一个像22这样的Int64添加到一个浮动64，就会得到一个浮动64(22。5)。因为函数(x)中的变量类型可以根据函数(x)的参数值而变化，这种增量的方法，特别是变量x是类型不稳定的。</p>
+<p>浮动64是一种表示存储在64位的浮点值的类型;在C中，它被称为double。这是64位处理器所理解的浮点类型之一。</p>
+<p>与大多数效率问题一样，这个问题在循环过程中更明显。for循环和while循环的代码多次运行，因此使其快速运行比只运行一次或两次的代码更重要。因此，我们的第一个检查是寻找在循环中有不稳定类型的变量。</p>
+<p>首先，让我们来看一个我们想要捕捉的例子。我们将看两个函数。每个数都是1到100，但不是求和，而是把每个数除以2，然后求和。两个函数将得到相同的答案(2525.0);两者都将返回相同的类型(浮动64)。然而，第一个函数是不稳定的，它会受到类型不稳定的影响，而第二个稳定的函数则不稳定。</p>
+<pre><code>function unstable()
+  sum = 0
+  for i=1:100
+    sum += i/2
+  <span class="hljs-operator"><span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">sum</span>
+<span class="hljs-keyword">end</span></span>
+</code></pre><pre><code>function stable()
+  sum = 0.0
+  for i=1:100
+    sum += i/2
+  <span class="hljs-operator"><span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">sum</span>
+<span class="hljs-keyword">end</span></span>
+</code></pre><p>这两个函数之间唯一的文本区别是在sum的初始化:sum=0和sum=0.0。在朱莉娅中，0是一个Int64文字，而0.0是一个浮动64字。这种微小的变化能带来多大的不同呢?</p>
+<p>因为朱莉娅是即时(JIT)编译的，所以函数的第一次运行要比后续运行要长。(第一次运行包括为这些参数类型编译函数所需的时间。)当我们对函数进行基准测试时，我们必须确保在计时之前运行它们(或者预编译它们)。</p>
+<pre><code>julia&gt; unstable()
+<span class="hljs-number">2525.0</span>
+
+julia&gt; stable()
+<span class="hljs-number">2525.0</span>
+
+julia&gt; <span class="hljs-variable">@time</span> unstable()
+elapsed <span class="hljs-keyword">time</span>: <span class="hljs-number">9.517</span>e-<span class="hljs-number">6</span> seconds (<span class="hljs-number">3248</span> bytes allocated)
+<span class="hljs-number">2525.0</span>
+
+julia&gt; <span class="hljs-variable">@time</span> stable()
+elapsed <span class="hljs-keyword">time</span>: <span class="hljs-number">2.285</span>e-<span class="hljs-number">6</span> seconds (<span class="hljs-number">64</span> bytes allocated)
+<span class="hljs-number">2525.0</span>
+</code></pre><p>@time宏打印出该函数运行了多长时间，以及在运行时分配了多少字节。每当需要新的内存时，所分配的字节数就会增加;当垃圾收集器将不再使用的内存占用内存时，它不会减少。这意味着分配的字节与分配和管理内存的时间有关，但这并不意味着我们在同一时间使用了所有的内存。</p>
+<p>如果我们想要得到稳定的和不稳定的数字，我们需要使这个循环长很多，或者多次运行这个函数。然而，看起来不稳定可能会更慢。更有趣的是，我们可以看到分配的字节数有很大的差距;不稳定已经分配了大约3 KB的内存，其中稳定使用64字节。</p>
+<p>由于我们可以看到不稳定是多么简单，我们可能会猜测这个分配是在循环中发生的。为了测试这一点，我们可以让循环更长的时间，看看分配是否相应地增加。让我们将循环从1增加到10000，这是100倍的迭代;我们将寻找分配的字节数增加大约100倍，达到大约300 KB。</p>
+<pre><code> function unstable()
+  sum = 0
+  for i=1:10000
+    sum += i/2
+  <span class="hljs-operator"><span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">sum</span>
+<span class="hljs-keyword">end</span></span>
+</code></pre><p>因为我们重新定义了函数，所以我们需要运行它，以便在我们度量它之前编译它。我们期望从新的函数定义中得到一个不同的，更大的答案，因为它现在是对更多的数求和。</p>
+<pre><code>julia&gt; unstable()
+<span class="hljs-number">2.50025</span>e7
+
+julia&gt;<span class="hljs-variable">@time</span> unstable()
+elapsed <span class="hljs-keyword">time</span>: <span class="hljs-number">0</span>.<span class="hljs-number">000667613</span> seconds (<span class="hljs-number">320048</span> bytes allocated)
+<span class="hljs-number">2.50025</span>e7
+</code></pre><p>新的不稳定分配了大约320 KB，这是如果分配在循环中发生的情况。为了解释这里发生了什么，我们来看看茱莉亚是如何工作的。</p>
+<p>不稳定和稳定之间的差异是因为不稳定的和必须被装箱，而稳定的总和可以被解除。框值由类型标记和表示值的实际位组成;无框值只有实际的比特。但是类型标签是很小的，所以这不是为什么拳击价值会分配更多的内存。</p>
+<p>不同之于编译器所能做的优化。当一个变量有一个具体的、不可变的类型时，编译器可以在函数中打开它。如果不是这样，那么变量必须在堆上分配，并参与到垃圾收集器中。不可变类型是特定于茱莉亚的概念。不可变类型的值是不可更改的。</p>
+<p>不可变类型通常是表示值的类型，而不是值的集合。例如，大多数数值类型，包括Int64和浮动64，都是不可变的。(朱莉娅的数值类型是普通类型，而不是特殊的原始类型;您可以定义一个新的MyInt64，它与提供的是相同的)。因为不可修改的类型不能被修改，所以每次您想要更改时，都必须创建一个新的副本。例如，4+6必须创建一个新的Int64来保存结果。相比之下，可变类型的成员可以就地更新;这意味着您不必复制整个东西来进行更改。</p>
+<p>x=x+2分配内存的想法听起来很奇怪，为什么要让这样的基本操作通过使Int64值变不可变而变慢呢?这就是那些编译器优化的地方:使用不可变类型(通常)不会减慢这个速度。如果x有一个稳定的、具体的类型(比如Int64)，那么编译器就可以在堆栈上分配x并在适当的位置进行x的变异。问题是只有当x不稳定类型(编译器不知道还是什么类型有多大);一旦盒装和堆x,编译器不完全确定,一些其他的代码没有使用价值,因此不能编辑它。</p>
+<p>因为稳定的sum有一个具体的类型(浮动64)，编译器知道它可以在函数中存储它，并改变它的值;sum不会在堆上分配，并且每次我们添加i/2时都不需要重新复制。</p>
+<p>因为不稳定中的sum没有具体类型，所以编译器会在堆上分配它。每次修改sum时，都会在堆上分配一个新值。所有这些花费在堆上的值(每次我们想要读取sum的值时都要检索它们)是很昂贵的。</p>
+<p>使用0和0.0是一个很容易犯的错误，尤其是当你对茱莉亚来说是新的时候。自动检查循环中使用的变量是类型稳定的，这有助于程序员更深入地了解他们的变量在其代码的性能关键部分的类型。</p>
+<h3 id="-">实现细节</h3>
+<p>我们需要找出在循环中使用哪些变量，我们需要找到这些变量的类型。然后，我们将需要决定如何以人类可读的格式打印它们。</p>
+<ul>
+<li>我们如何找到循环?</li>
+<li>如何在循环中找到变量?</li>
+<li>我们如何找到变量的类型呢?</li>
+<li>我们如何打印结果?</li>
+<li>我们如何判断这种类型是否不稳定?</li>
+</ul>
+<p>我要先回答最后一个问题，因为这整个的努力都取决于它。我们研究了一个不稳定的函数，作为程序员，我们看到了如何识别一个不稳定的变量，但是我们需要我们的程序来找到它们。这听起来似乎需要模拟函数来寻找那些值可能会改变的变量，这听起来可能需要一些工作。幸运的是，朱莉娅的类型推断已经通过函数的执行来确定类型。</p>
+<p>不稳定的总和是联合(浮动64，Int64)。这是一个工会类型，一种特殊的类型，它表明变量可以包含一组类型的值。类型Union的一个变量(浮动64，Int64)可以保存类型Int64或浮动64的值;一个值只能有一个类型。一个加入任何类型的工会类型(例如:工会类型(浮动64，Int64，Int32)加入了三种类型)。我们要寻找的是在循环中有工会类型的变量。</p>
+<p>将代码解析为具有代表性的结构是一项复杂的业务，随着语言的发展，将变得更加复杂。在本章中，我们将依赖于编译器使用的内部数据结构。这意味着我们不必担心读取文件或解析它们，但这意味着我们必须处理那些不在我们控制范围内的数据结构，有时会感到笨拙或丑陋。</p>
+<p>除了所有的工作我们将拯救自己不必解析代码,使用相同的数据结构,编译器使用意味着我们检查的准确评估将基于编译器的理解——意味着我们的检查将一致的代码如何运行。</p>
+<p>这个从朱莉娅代码中检查朱莉娅代码的过程叫做内省。当你或我反思时，我们在思考我们的思考和感受的方式和原因。当代码进行检查时，它会检查同一语言中代码的表示或执行特性(可能是它自己的代码)。当代码的内省扩展到修改被检查的代码时，它被称为元编程(编写或修改程序的程序)。</p>
+<h3 id="-">内省的茱莉亚</h3>
+<p>朱莉娅很容易反省。我们构建了四个函数来让我们了解编译器在想什么:code降下、code类型化、codellvm和code本机。这些列在编译过程中，它们的输出来自于哪个步骤;第一个是与我们输入的代码最接近的，而最后一个是与CPU运行最接近的。在本章中，我们将重点讨论code类型化，它为我们提供了优化的、类型推断的抽象语法树(AST)。</p>
+<p>code类型化有两个参数:感兴趣的函数和参数类型的元组。例如，如果我们希望在使用两个Int64s调用函数foo时看到AST，那么我们将调用code类型化(foo，(Int64，Int64))。</p>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span><span class="hljs-params">(x,y)</span>
+  <span class="hljs-title">z</span> = <span class="hljs-title">x</span> + <span class="hljs-title">y</span>
+  <span class="hljs-title">return</span> 2 * <span class="hljs-title">z</span>
+<span class="hljs-title">end</span>
+
+<span class="hljs-title">code_typed</span><span class="hljs-params">(foo,<span class="hljs-params">(Int64,Int64)</span>)</span></span>
+</code></pre><p>这是code类型化会返回的结构:</p>
+<pre><code> <span class="hljs-number">1</span>-element <span class="hljs-constant">Array</span>{<span class="hljs-constant">Any</span>,<span class="hljs-number">1</span>}<span class="hljs-symbol">:</span>
+<span class="hljs-symbol">:</span>(<span class="hljs-variable">$(</span><span class="hljs-constant">Expr</span>(<span class="hljs-symbol">:lambda</span>, {<span class="hljs-symbol">:x</span>,<span class="hljs-symbol">:y</span>}, {{<span class="hljs-symbol">:z</span>},{{<span class="hljs-symbol">:x</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">0</span>},{<span class="hljs-symbol">:y</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">0</span>},{<span class="hljs-symbol">:z</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">18</span>}},{}},
+ <span class="hljs-symbol">:</span>(<span class="hljs-keyword">begin</span>  <span class="hljs-comment"># none, line 2:</span>
+        z = (top(box))(<span class="hljs-constant">Int64</span>,(top(add_int))(<span class="hljs-symbol">x:</span><span class="hljs-symbol">:Int64</span>,<span class="hljs-symbol">y:</span><span class="hljs-symbol">:Int64</span>))<span class="hljs-constant">::Int64</span> <span class="hljs-comment"># line 3:</span>
+        <span class="hljs-keyword">return</span> (top(box))(<span class="hljs-constant">Int64</span>,(top(mul_int))(<span class="hljs-number">2</span>,<span class="hljs-symbol">z:</span><span class="hljs-symbol">:Int64</span>))<span class="hljs-constant">::Int64</span>
+    <span class="hljs-symbol">end:</span><span class="hljs-symbol">:Int64</span>))))
+</code></pre><p>这是一个数组;这允许code类型化返回多个匹配的方法。函数和参数类型的一些组合可能不能完全确定应该调用哪种方法。例如，您可以传入类似于任何类型的类型(而不是Int64)。Any是类型层次结构顶部的类型;所有类型都是任何类型的子类型(包括任何类型)。如果我们在元组的参数类型中包含任何类型，并且有多个匹配的方法，那么来自code类型化的数组将包含多个元素;每个匹配方法都有一个元素。</p>
+<p>让我们把我们的例子排除出去，让它更容易讨论。</p>
+<pre><code> julia&gt; e = code_typed(foo,(<span class="hljs-constant">Int64</span>,<span class="hljs-constant">Int64</span>))[<span class="hljs-number">1</span>]
+<span class="hljs-symbol">:</span>(<span class="hljs-variable">$(</span><span class="hljs-constant">Expr</span>(<span class="hljs-symbol">:lambda</span>, {<span class="hljs-symbol">:x</span>,<span class="hljs-symbol">:y</span>}, {{<span class="hljs-symbol">:z</span>},{{<span class="hljs-symbol">:x</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">0</span>},{<span class="hljs-symbol">:y</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">0</span>},{<span class="hljs-symbol">:z</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">18</span>}},{}},
+ <span class="hljs-symbol">:</span>(<span class="hljs-keyword">begin</span>  <span class="hljs-comment"># none, line 2:</span>
+        z = (top(box))(<span class="hljs-constant">Int64</span>,(top(add_int))(<span class="hljs-symbol">x:</span><span class="hljs-symbol">:Int64</span>,<span class="hljs-symbol">y:</span><span class="hljs-symbol">:Int64</span>))<span class="hljs-constant">::Int64</span> <span class="hljs-comment"># line 3:</span>
+        <span class="hljs-keyword">return</span> (top(box))(<span class="hljs-constant">Int64</span>,(top(mul_int))(<span class="hljs-number">2</span>,<span class="hljs-symbol">z:</span><span class="hljs-symbol">:Int64</span>))<span class="hljs-constant">::Int64</span>
+    <span class="hljs-symbol">end:</span><span class="hljs-symbol">:Int64</span>))))
+</code></pre><p>我们感兴趣的结构是在数组中:它是一个Expr。朱莉娅使用Expr(缩写为表达式)来表示AST。(抽象语法树是编译器对代码的含义的理解，这有点像你在小学时必须用图表来表示句子)。我们返回的Expr表示一个方法。它有一些元数据(关于方法中出现的变量)和组成方法主体的表达式。</p>
+<p>现在我们可以问一些关于e的问题。</p>
+<p>我们可以通过使用名称函数来询问一个Expr的属性，它适用于任何朱莉娅的值或类型。它返回由该类型定义的名称数组(或值的类型)。</p>
+<pre><code> julia&gt; names(e)
+<span class="hljs-number">3</span>-element <span class="hljs-constant">Array</span>{<span class="hljs-constant">Symbol</span>,<span class="hljs-number">1</span>}<span class="hljs-symbol">:</span>
+ <span class="hljs-symbol">:head</span>
+ <span class="hljs-symbol">:args</span>
+ <span class="hljs-symbol">:typ</span>
+</code></pre><p>我们只是问e的名字，现在我们可以问每个名字对应的值是多少。Expr有三个属性:头、typ和args。 </p>
+<pre><code> julia&gt; e.head
+<span class="hljs-symbol">:lambda</span>
+
+julia&gt; e.typ
+<span class="hljs-constant">Any</span>
+
+julia&gt; e.args
+<span class="hljs-number">3</span>-element <span class="hljs-constant">Array</span>{<span class="hljs-constant">Any</span>,<span class="hljs-number">1</span>}<span class="hljs-symbol">:</span>
+ {<span class="hljs-symbol">:x</span>,<span class="hljs-symbol">:y</span>}                                                                                                                                                                                     
+ {{<span class="hljs-symbol">:z</span>},{{<span class="hljs-symbol">:x</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">0</span>},{<span class="hljs-symbol">:y</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">0</span>},{<span class="hljs-symbol">:z</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">18</span>}},{}}                                                                                                                                         
+ <span class="hljs-symbol">:</span>(<span class="hljs-keyword">begin</span>  <span class="hljs-comment"># none, line 2:</span>
+        z = (top(box))(<span class="hljs-constant">Int64</span>,(top(add_int))(<span class="hljs-symbol">x:</span><span class="hljs-symbol">:Int64</span>,<span class="hljs-symbol">y:</span><span class="hljs-symbol">:Int64</span>))<span class="hljs-constant">::Int64</span> <span class="hljs-comment"># line 3:</span>
+        <span class="hljs-keyword">return</span> (top(box))(<span class="hljs-constant">Int64</span>,(top(mul_int))(<span class="hljs-number">2</span>,<span class="hljs-symbol">z:</span><span class="hljs-symbol">:Int64</span>))<span class="hljs-constant">::Int64</span>
+    <span class="hljs-symbol">end:</span><span class="hljs-symbol">:Int64</span>)
+</code></pre><p>我们刚刚看到了一些打印出来的值，但这并不能告诉我们它们的含义，或者它们是如何被使用的。</p>
+<p>head告诉我们这是什么类型的表达式;通常情况下，您将在朱莉娅中使用单独的类型，但是Expr是一种模型，用于对解析器中使用的结构进行建模。解析器是用Scheme的方言编写的，它将所有东西都构造为嵌套列表。head告诉我们这些Expr的其余部分是如何组织的以及它代表了什么类型的表达式。</p>
+<p>typ是表达式的推断返回类型;当您对任何表达式求值时，它会产生一些值。typ是表达式将计算的值的类型。对于几乎所有的Exprs，这个值将是任意的(这总是正确的，因为每种可能的类型都是任何类型的子类型)。只有类型推断方法的主体和其中的大多数表达式将把它们的typ设置为更具体的东西。(因为type是一个关键字，所以这个字段不能使用这个词作为它的名字。)</p>
+<p>args是Expr中最复杂的部分，它的结构根据头部的值而变化。它始终是一个数组(一个非类型化数组)，但除此之外，结构也发生了变化。</p>
+<p>在一个表示方法的Expr中，在e.args中有三个元素:</p>
+<pre><code> julia&gt; e.args[<span class="hljs-number">1</span>] # names <span class="hljs-keyword">of</span> <span class="hljs-built_in">arguments</span> <span class="hljs-keyword">as</span> symbols
+<span class="hljs-number">2</span>-element <span class="hljs-built_in">Array</span>{Any,<span class="hljs-number">1</span>}:
+ :x
+ :y
+</code></pre><p>符号是表示变量、常量、函数和模块的名称的一种特殊类型。它们与字符串是不同的类型，因为它们特别表示程序构造的名称。 </p>
+<pre><code> julia&gt; e.args[<span class="hljs-number">2</span>] <span class="hljs-comment"># three lists of variable metadata</span>
+<span class="hljs-number">3</span>-element <span class="hljs-constant">Array</span>{<span class="hljs-constant">Any</span>,<span class="hljs-number">1</span>}<span class="hljs-symbol">:</span>
+ {<span class="hljs-symbol">:z</span>}                                     
+ {{<span class="hljs-symbol">:x</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">0</span>},{<span class="hljs-symbol">:y</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">0</span>},{<span class="hljs-symbol">:z</span>,<span class="hljs-constant">Int64</span>,<span class="hljs-number">18</span>}}
+ {}
+</code></pre><p>上面的第一个列表包含所有局部变量的名称，这里只有一个(z)。第二个列表包含每个变量的元组和方法的参数;每个元组都有变量名、变量的推断类型和一个数字。这个数字传达了关于如何使用变量的信息，在机器(而不是人类)友好的方式中。最后一个列表是捕获变量名，在本例中是空的。</p>
+<pre><code> julia&gt; e.args[<span class="hljs-number">3</span>] <span class="hljs-comment"># the body of the method</span>
+:(begin  <span class="hljs-comment"># none, line 2:</span>
+        z = (top(box))(Int64,(top(add_int))(x::Int64,y::Int64))::Int64 <span class="hljs-comment"># line 3:</span>
+        <span class="hljs-keyword">return</span> (top(box))(Int64,(top(mul_int))(<span class="hljs-number">2</span>,z::Int64))::Int64
+    end::Int64)
+</code></pre><p> 前两个args元素是关于第三个的元数据。虽然元数据非常有趣，但现在还没有必要。重要的部分是方法的主体，它是第三个元素。这是另一个Expr。 </p>
+<pre><code>julia&gt; body = e.args[<span class="hljs-number">3</span>]
+:(begin  <span class="hljs-comment"># none, line 2:</span>
+        z = (top(box))(Int64,(top(add_int))(x::Int64,y::Int64))::Int64 <span class="hljs-comment"># line 3:</span>
+        <span class="hljs-keyword">return</span> (top(box))(Int64,(top(mul_int))(<span class="hljs-number">2</span>,z::Int64))::Int64
+    end::Int64)
+
+julia&gt; body.head
+:body
+</code></pre><p>这个Expr有头部:身体因为它是这个方法的主体。</p>
+<pre><code> julia&gt; body.typ
+Int64
+</code></pre><p> typ是该方法的推断返回类型。 </p>
+<pre><code> julia&gt; body.args
+<span class="hljs-number">4</span>-element <span class="hljs-keyword">Array</span>{Any,<span class="hljs-number">1</span>}:
+ :( <span class="hljs-comment"># none, line 2:)                                              </span>
+ :(z = (top(box))(Int64,(top(add_int))(x::Int64,y::Int64))::Int64)
+ :( <span class="hljs-comment"># line 3:)                                                    </span>
+ :(<span class="hljs-keyword">return</span> (top(box))(Int64,(top(mul_int))(<span class="hljs-number">2</span>,z::Int64))::Int64)
+</code></pre><p>args包含一个表达式列表:方法体中的表达式列表。有一些行号的注释(例如(第3行:))，但是大部分的身体都在设置z的值(z=x+y)和返回2 z，注意到这些操作已经被一个特殊的内在函数代替了。顶部(函数名)表明了一个固有的函数;在朱莉娅的代码生成中实现了这个功能，而不是茱莉亚。</p>
+<p>我们还没有看到一个循环是什么样子的，我们来试一下。</p>
+<pre><code>julia&gt; function lloop(x)
+         <span class="hljs-keyword">for</span> x = <span class="hljs-number">1</span><span class="hljs-symbol">:</span><span class="hljs-number">100</span>
+           x *= <span class="hljs-number">2</span>
+         <span class="hljs-keyword">end</span>
+       <span class="hljs-keyword">end</span>
+lloop (generic function with <span class="hljs-number">1</span> method)
+
+julia&gt; code_typed(lloop, (<span class="hljs-constant">Int</span>,))[<span class="hljs-number">1</span>].args[<span class="hljs-number">3</span>]
+<span class="hljs-symbol">:</span>(<span class="hljs-keyword">begin</span>  <span class="hljs-comment"># none, line 2:</span>
+        <span class="hljs-comment">#s120 = $(Expr(:new, UnitRange{Int64}, 1, :(((top(getfield))(Intrinsics,</span>
+         <span class="hljs-symbol">:select_value</span>))((top(sle_int))(<span class="hljs-number">1</span>,<span class="hljs-number">100</span>)<span class="hljs-constant">::Bool</span>,<span class="hljs-number">100</span>,(top(box))(<span class="hljs-constant">Int64</span>,(top(
+         sub_int))(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>))<span class="hljs-constant">::Int64</span>)<span class="hljs-constant">::Int64</span>)))<span class="hljs-constant">::UnitRange</span>{<span class="hljs-constant">Int64</span>}
+        <span class="hljs-comment">#s119 = (top(getfield))(#s120::UnitRange{Int64},:start)::Int64        unless </span>
+         (top(box))(<span class="hljs-constant">Bool</span>,(top(not_int))(<span class="hljs-comment">#s119::Int64 === (top(box))(Int64,(top(</span>
+         add_int))((top(getfield))
+         (<span class="hljs-comment">#s120::UnitRange{Int64},:stop)::Int64,1))::Int64::Bool))::Bool goto 1</span>
+        <span class="hljs-number">2</span><span class="hljs-symbol">:</span> 
+        _var<span class="hljs-number">0</span> = <span class="hljs-comment">#s119::Int64</span>
+        _var1 = (top(box))(<span class="hljs-constant">Int64</span>,(top(add_int))(<span class="hljs-comment">#s119::Int64,1))::Int64</span>
+        x = <span class="hljs-symbol">_var0:</span><span class="hljs-symbol">:Int64</span>
+        <span class="hljs-comment">#s119 = _var1::Int64 # line 3:</span>
+        x = (top(box))(<span class="hljs-constant">Int64</span>,(top(mul_int))(<span class="hljs-symbol">x:</span><span class="hljs-symbol">:Int64</span>,<span class="hljs-number">2</span>))<span class="hljs-constant">::Int64</span>
+        <span class="hljs-number">3</span><span class="hljs-symbol">:</span> 
+        <span class="hljs-keyword">unless</span> (top(box))(<span class="hljs-constant">Bool</span>,(top(not_int))((top(box))(<span class="hljs-constant">Bool</span>,(top(not_int))
+         (<span class="hljs-comment">#s119::Int64 === (top(box))(Int64,(top(add_int))((top(getfield))(</span>
+         <span class="hljs-comment">#s120::UnitRange{Int64},:stop)::Int64,1))::Int64::Bool))::Bool))::Bool</span>
+         goto <span class="hljs-number">2</span>
+        <span class="hljs-number">1</span><span class="hljs-symbol">:</span>         <span class="hljs-number">0</span><span class="hljs-symbol">:</span> 
+        <span class="hljs-keyword">return</span>
+    <span class="hljs-symbol">end:</span><span class="hljs-symbol">:Nothing</span>)
+</code></pre><p>你会注意到在身体里没有循环或while循环。当编译器将代码从我们编写的代码转换为CPU理解的二进制指令时，这些特性对人类很有用，但是CPU(如循环)不理解的特性将被删除。循环被重写为标签和后后表达式。后藤有一个数字，每个标签也有一个数字。后藤跳到标签上的数字是相同的。  </p>
+<h3 id="-">检测和提取循环</h3>
+<p>我们将通过查找向后跳转的后藤表达式来找到循环。</p>
+<p>我们需要找到标签和gotos，并找出哪些是匹配的。我将首先给出完整的实现。在代码墙之后，我们将把它拆开并检查这些部分。</p>
+<pre><code><span class="hljs-comment"># This is a function for trying to detect loops in the body of a Method</span>
+<span class="hljs-comment"># Returns lines that are inside one or more loops</span>
+function loopcontents(<span class="hljs-symbol">e:</span><span class="hljs-symbol">:Expr</span>)
+  b = body(e)
+  loops = <span class="hljs-constant">Int</span>[]
+  nesting = <span class="hljs-number">0</span>
+  lines = {}
+  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span><span class="hljs-symbol">:length</span>(b)
+    <span class="hljs-keyword">if</span> typeof(b[i]) == <span class="hljs-constant">LabelNode</span>
+      l = b[i].label
+      jumpback = findnext(x-&gt; (typeof(x) == <span class="hljs-constant">GotoNode</span> &amp;&amp; x.label == l) 
+                              || (<span class="hljs-constant">Base</span>.is_expr(x,<span class="hljs-symbol">:gotoifnot</span>) &amp;&amp; x.args[<span class="hljs-keyword">end</span>] == l),
+                          b, i)
+      <span class="hljs-keyword">if</span> jumpback != <span class="hljs-number">0</span>
+        push!(loops,jumpback)
+        nesting += <span class="hljs-number">1</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">if</span> nesting &gt; <span class="hljs-number">0</span>
+      push!(lines,(i,b[i]))
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">if</span> typeof(b[i]) == <span class="hljs-constant">GotoNode</span> &amp;&amp; <span class="hljs-keyword">in</span>(i,loops)
+      splice!(loops,findfirst(loops,i))
+      nesting -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+  lines
+<span class="hljs-keyword">end</span>
+</code></pre><p>现在我们来解释一下:</p>
+<pre><code><span class="hljs-setting">b = <span class="hljs-value">body(e)</span></span>
+</code></pre><p>我们首先从方法体中获取所有的表达式，作为一个数组。身体是我已经实现的一个功能:</p>
+<pre><code>  <span class="hljs-comment"># Return the body of a Method.</span>
+  <span class="hljs-comment"># Takes an Expr representing a Method,</span>
+  <span class="hljs-comment"># returns Vector{Expr}.</span>
+  function body(<span class="hljs-symbol">e:</span><span class="hljs-symbol">:Expr</span>)
+    <span class="hljs-keyword">return</span> e.args[<span class="hljs-number">3</span>].args
+  <span class="hljs-keyword">end</span>
+</code></pre><p> 然后</p>
+<pre><code>  <span class="hljs-title">loops</span> = Int[]
+  nesting = <span class="hljs-number">0</span>
+  lines = {}
+</code></pre><p>循环是一个标签行数的数组，其中的gotos是循环的。嵌套表示当前内部循环的数量。行是一个数组(索引，Expr)元组。</p>
+<pre><code>  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span><span class="hljs-symbol">:length</span>(b)
+    <span class="hljs-keyword">if</span> typeof(b[i]) == <span class="hljs-constant">LabelNode</span>
+      l = b[i].label
+      jumpback = findnext(
+        x-&gt; (typeof(x) == <span class="hljs-constant">GotoNode</span> &amp;&amp; x.label == l) 
+            || (<span class="hljs-constant">Base</span>.is_expr(x,<span class="hljs-symbol">:gotoifnot</span>) &amp;&amp; x.args[<span class="hljs-keyword">end</span>] == l),
+        b, i)
+      <span class="hljs-keyword">if</span> jumpback != <span class="hljs-number">0</span>
+        push!(loops,jumpback)
+        nesting += <span class="hljs-number">1</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+</code></pre><p>我们查看e的每个表达式，如果它是一个标签，我们检查是否有一个跳转到这个标签(并且发生在当前索引之后)。如果findnext的结果大于零，那么就会存在这样的goto节点，因此我们将把它添加到循环中(我们当前所处的循环数组)，并增加我们的嵌套级别。</p>
+<pre><code>    <span class="hljs-keyword">if</span> nesting &gt; <span class="hljs-number">0</span>
+      <span class="hljs-keyword">push</span>!(lines,(i,b[i]))
+    end
+</code></pre><p>如果我们当前在一个循环中，我们将当前行推到我们的行数组中返回。</p>
+<pre><code>    <span class="hljs-keyword">if</span> typeof(b[i]) == <span class="hljs-constant">GotoNode</span> &amp;&amp; <span class="hljs-keyword">in</span>(i,loops)
+      splice!(loops,findfirst(loops,i))
+      nesting -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+  lines
+<span class="hljs-keyword">end</span>
+</code></pre><p>如果我们在GotoNode，我们会检查它是不是一个循环的结束。如果是这样，我们将从循环中删除条目并减少我们的嵌套级别。</p>
+<p>这个函数的结果是行数组，一个数组(索引，值)元组。这意味着数组中的每个值都有一个索引到方法-body-expr的主体和该索引的值。行中的每个元素都是循环中出现的表达式。</p>
+<h3 id="-">发现和输入变量</h3>
+<p>我们刚刚完成了函数循环内容，它返回了内部循环中的Exprs。我们的下一个函数将是loosetypes，它获取一个Exprs列表，并返回一个松散类型的变量列表。稍后，我们将把loopcontents的输出传递到loosetypes。</p>
+<p>在循环中出现的每个表达式中，loosetypes会搜索符号及其相关类型的出现。变量使用在AST中显示为symbolnode;symbolnode保留变量的名称和推断类型。</p>
+<p>我们不能只检查循环内容收集到的每个表达式，看看它是不是一个SymbolNode。问题是每个Expr都可能包含一个或多个Expr;每个Expr可能包含一个或多个符号。这意味着我们需要提取任何嵌套的Exprs，这样我们就可以看到它们中的每一个都为symbolnode。</p>
+<pre><code><span class="hljs-comment"># given `lr`, a Vector of expressions (Expr + literals, etc)</span>
+<span class="hljs-comment"># try to find all occurrences of a variables in `lr`</span>
+<span class="hljs-comment"># and determine their types</span>
+function loosetypes(<span class="hljs-symbol">lr:</span><span class="hljs-symbol">:Vector</span>)
+  symbols = <span class="hljs-constant">SymbolNode</span>[]
+  <span class="hljs-keyword">for</span> (i,e) <span class="hljs-keyword">in</span> lr
+    <span class="hljs-keyword">if</span> typeof(e) == <span class="hljs-constant">Expr</span>
+      es = copy(e.args)
+      <span class="hljs-keyword">while</span> !isempty(es)
+        e1 = pop!(es)
+        <span class="hljs-keyword">if</span> typeof(e1) == <span class="hljs-constant">Expr</span>
+          append!(es,e1.args)
+        elseif typeof(e1) == <span class="hljs-constant">SymbolNode</span>
+          push!(symbols,e1)
+        <span class="hljs-keyword">end</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+  loose_types = <span class="hljs-constant">SymbolNode</span>[]
+  <span class="hljs-keyword">for</span> symnode <span class="hljs-keyword">in</span> symbols
+    <span class="hljs-keyword">if</span> !isleaftype(symnode.typ) &amp;&amp; typeof(symnode.typ) == <span class="hljs-constant">UnionType</span>
+      push!(loose_types, symnode)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">return</span> loose_types
+<span class="hljs-keyword">end</span>
+</code></pre><pre><code>  symbols = <span class="hljs-constant">SymbolNode</span>[]
+  <span class="hljs-keyword">for</span> (i,e) <span class="hljs-keyword">in</span> lr
+    <span class="hljs-keyword">if</span> typeof(e) == <span class="hljs-constant">Expr</span>
+      es = copy(e.args)
+      <span class="hljs-keyword">while</span> !isempty(es)
+        e1 = pop!(es)
+        <span class="hljs-keyword">if</span> typeof(e1) == <span class="hljs-constant">Expr</span>
+          append!(es,e1.args)
+        elseif typeof(e1) == <span class="hljs-constant">SymbolNode</span>
+          push!(symbols,e1)
+        <span class="hljs-keyword">end</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre><p>while循环会递归地遍历所有的Exprs。每当循环找到一个符号时，它就会把它添加到向量符号中。</p>
+<pre><code>  loose_types = <span class="hljs-constant">SymbolNode</span>[]
+  <span class="hljs-keyword">for</span> symnode <span class="hljs-keyword">in</span> symbols
+    <span class="hljs-keyword">if</span> !isleaftype(symnode.typ) &amp;&amp; typeof(symnode.typ) == <span class="hljs-constant">UnionType</span>
+      push!(loose_types, symnode)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">return</span> loose_types
+<span class="hljs-keyword">end</span>
+</code></pre><p>现在我们有了一个变量列表和它们的类型，所以很容易检查类型是否松散。loosetype通过查找特定类型的非具体类型，即工会类型来完成这一工作。当我们认为所有的非具体类型都是“失败”时，我们会得到更多“失败”的结果。这是因为我们用带注释的参数类型来评估每个方法，这很可能是抽象的。</p>
+<h3 id="-">这可用</h3>
+<p>既然我们可以对表达式进行检查，那么我们就应该更容易调用用户的代码。我们将创建两种调用checkloop类型的方法:</p>
+<ul>
+<li>在整个函数中，这将检查给定函数的每个方法。</li>
+<li>在表达式中，如果用户提取代码类型的结果，这将是有效的。</li>
+</ul>
+<pre><code><span class="hljs-comment">## for a given Function, run checklooptypes on each Method</span>
+function checklooptypes(<span class="hljs-symbol">f:</span><span class="hljs-symbol">:Callable</span>;kwargs...)
+  lrs = <span class="hljs-constant">LoopResult</span>[]
+  <span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> code_typed(f)
+    lr = checklooptypes(e)
+    <span class="hljs-keyword">if</span> length(lr.lines) &gt; <span class="hljs-number">0</span> push!(lrs,lr) <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-constant">LoopResults</span>(f.env.name,lrs)
+<span class="hljs-keyword">end</span>
+</code></pre><pre><code><span class="hljs-comment"># for an Expr representing a Method,</span>
+<span class="hljs-comment"># check that the type of each variable used in a loop</span>
+<span class="hljs-comment"># has a concrete type</span>
+checklooptypes(e::Expr;kwargs...) = 
+ LoopResult(MethodSignature(e),loosetypes(loopcontents(e)))
+</code></pre><p> 我们可以看到两个选项在同一个函数中使用相同的方法:</p>
+<pre><code>julia&gt; using TypeCheck
+
+julia&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span><span class="hljs-params">(x::Int)</span>
+         <span class="hljs-title">s</span> = 0
+         <span class="hljs-title">for</span> <span class="hljs-title">i</span> = 1:<span class="hljs-title">x</span>
+           <span class="hljs-title">s</span> += <span class="hljs-title">i</span>/2
+         <span class="hljs-title">end</span>
+         <span class="hljs-title">return</span> <span class="hljs-title">s</span>
+       <span class="hljs-title">end</span>
+<span class="hljs-title">foo</span> <span class="hljs-params">(generic function with <span class="hljs-number">1</span> method)</span>
+
+<span class="hljs-title">julia</span>&gt; <span class="hljs-title">checklooptypes</span><span class="hljs-params">(foo)</span>
+<span class="hljs-title">foo</span><span class="hljs-params">(Int64)</span>::<span class="hljs-title">Union</span><span class="hljs-params">(Int64,Float64)</span>
+    <span class="hljs-title">s</span>::<span class="hljs-title">Union</span><span class="hljs-params">(Int64,Float64)</span>
+    <span class="hljs-title">s</span>::<span class="hljs-title">Union</span><span class="hljs-params">(Int64,Float64)</span>
+
+<span class="hljs-title">julia</span>&gt; <span class="hljs-title">checklooptypes</span><span class="hljs-params">(code_typed<span class="hljs-params">(foo,<span class="hljs-params">(Int,)</span>)</span>[<span class="hljs-number">1</span>])</span>
+<span class="hljs-params">(Int64)</span>::<span class="hljs-title">Union</span><span class="hljs-params">(Int64,Float64)</span>
+    <span class="hljs-title">s</span>::<span class="hljs-title">Union</span><span class="hljs-params">(Int64,Float64)</span>
+    <span class="hljs-title">s</span>::<span class="hljs-title">Union</span><span class="hljs-params">(Int64,Float64)</span></span>
+</code></pre><h3 id="-">漂亮的印刷</h3>
+<p>我跳过了一个实现细节:我们是如何将结果打印到REPL的?</p>
+<p>首先，我做了一些新的类型。LoopResults是检查整个函数的结果;它具有每个方法的函数名和结果。LoopResult是检查一种方法的结果;它有参数类型和松散类型的变量。</p>
+<p>checklooptypes函数返回一个循环结果。该类型有一个名为show的函数。REPL调用显示它想要显示的值;然后显示将调用我们的show实现。</p>
+<p>这段代码对于使静态分析可用是很重要的，但是它并没有做静态分析。您应该在实现语言中使用首选的方法来打印输出类型和输出，这就是茱莉亚所做的。</p>
+<pre><code> type <span class="hljs-constant">LoopResult</span>
+  <span class="hljs-symbol">msig:</span><span class="hljs-symbol">:MethodSignature</span>
+  <span class="hljs-symbol">lines:</span><span class="hljs-symbol">:Vector</span>{<span class="hljs-constant">SymbolNode</span>}
+  <span class="hljs-constant">LoopResult</span>(<span class="hljs-symbol">ms:</span><span class="hljs-symbol">:MethodSignature</span>,<span class="hljs-symbol">ls:</span><span class="hljs-symbol">:Vector</span>{<span class="hljs-constant">SymbolNode</span>}) = new(ms,unique(ls))
+<span class="hljs-keyword">end</span>
+
+function <span class="hljs-constant">Base</span>.show(<span class="hljs-symbol">io:</span><span class="hljs-symbol">:IO</span>, <span class="hljs-symbol">x:</span><span class="hljs-symbol">:LoopResult</span>)
+  display(x.msig)
+  <span class="hljs-keyword">for</span> snode <span class="hljs-keyword">in</span> x.lines
+    println(io,<span class="hljs-string">"\t"</span>,string(snode.name),<span class="hljs-string">"::"</span>,string(snode.typ))
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+type <span class="hljs-constant">LoopResults</span>
+  <span class="hljs-symbol">name:</span><span class="hljs-symbol">:Symbol</span>
+  <span class="hljs-symbol">methods:</span><span class="hljs-symbol">:Vector</span>{<span class="hljs-constant">LoopResult</span>}
+<span class="hljs-keyword">end</span>
+
+function <span class="hljs-constant">Base</span>.show(<span class="hljs-symbol">io:</span><span class="hljs-symbol">:IO</span>, <span class="hljs-symbol">x:</span><span class="hljs-symbol">:LoopResults</span>)
+  <span class="hljs-keyword">for</span> lr <span class="hljs-keyword">in</span> x.methods
+    print(io,string(x.name))
+    display(lr)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre><h2 id="-">寻找未使用的变量</h2>
+<p>有时，当您在程序中输入时，您会键入一个变量名。程序不能告诉您，您的意思是要与前面拼写正确的变量相同;它只看到一个变量只使用一次，您可能会看到一个变量名拼写错误。需要变量声明的语言自然会捕获这些拼写错误，但是许多动态语言不需要声明，因此需要额外的分析层来捕获它们。</p>
+<p>我们可以通过查找只使用一次或仅使用一种方法的变量来查找拼写错误的变量名(以及其他未使用的变量)。</p>
+<p>下面是一个示例，其中有一个拼写错误的代码。</p>
+<pre><code>function foo(<span class="hljs-symbol">variable_name:</span><span class="hljs-symbol">:Int</span>)
+  sum = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">for</span> i=<span class="hljs-number">1</span><span class="hljs-symbol">:variable_name</span>
+    sum += variable_name
+  <span class="hljs-keyword">end</span>
+  variable_nme = sum
+  <span class="hljs-keyword">return</span> variable_name
+<span class="hljs-keyword">end</span>
+</code></pre><p>这种错误可能会在您的代码中造成问题，只有在运行时才会发现。让我们假设您只对每个变量名拼写一次。我们可以将变量的用法分隔成写和读。如果拼写错误是一种书写(即:然后，没有错误将被抛出;您将只是默默地将值放入错误的变量中，找到错误可能会很令人沮丧。如果拼写错误是一种阅读(即:右=worng+2)，当运行代码时，您将得到一个运行时错误;我们希望对此有一个静态警告，以便您可以更快地找到这个错误，但是您仍然需要等待，直到运行代码来查看问题。</p>
+<p>随着代码变得越来越复杂，除非您有了静态分析的帮助，否则很难发现错误。</p>
+<p>左手边和右手边</p>
+<p>另一种讨论“读”和“写”用法的方法是把它们叫做“右手边”(RHS)和“左手边”(LHS)用法。这指的是变量相对于=符号的位置。</p>
+<p>以下是一些x的用法:</p>
+<ul>
+<li>左边:</li>
+</ul>
+<p>x = 2</p>
+<p>x=y+22</p>
+<p>x=x+y+2</p>
+<p>x+=2(将糖转化为x=x+2)</p>
+<ul>
+<li>右边:</li>
+</ul>
+<p>y=x+22</p>
+<p>x=x+y+2</p>
+<p>x+=2(将糖转化为x=x+2)</p>
+<p>2 * x</p>
+<p>注意，x=x+y+2和x+=2的表达式都出现在这两个部分，因为x出现在等号两边。</p>
+<h2 id="looking-for-single-use-variables">Looking for Single-Use Variables</h2>
+<p>我们需要寻找两种情况:</p>
+<p>Variables used once.</p>
+<p>变量只在LHS或仅在RHS上使用。</p>
+<p>我们将寻找所有的变量用法，但我们将分别寻找LHS和RHS的用法，以涵盖这两种情况。</p>
+<h3 id="finding-lhs-usages">Finding LHS Usages</h3>
+<p>要在LHS上，一个变量需要在左边有一个=号。这意味着我们可以在AST中查找=符号，然后在它们的左边查找相关的变量。</p>
+<p>在AST中，一个=是一个带有头:(=)的Expr。(括号是用来表示这是=的符号，而不是另一个操作符:=。)args中的第一个值将是其LHS的变量名。因为我们正在查看编译器已经清理过的AST，所以(几乎)总是只在等号左边的一个符号。</p>
+<p>让我们看看这在代码中意味着什么:</p>
+<pre><code>julia&gt; <span class="hljs-symbol">:</span>(x = <span class="hljs-number">5</span>)
+<span class="hljs-symbol">:</span>(x = <span class="hljs-number">5</span>)
+
+julia&gt; <span class="hljs-symbol">:</span>(x = <span class="hljs-number">5</span>).head
+<span class="hljs-symbol">:</span>(=)
+
+julia&gt; <span class="hljs-symbol">:</span>(x = <span class="hljs-number">5</span>).args
+<span class="hljs-number">2</span>-element <span class="hljs-constant">Array</span>{<span class="hljs-constant">Any</span>,<span class="hljs-number">1</span>}<span class="hljs-symbol">:</span>
+  <span class="hljs-symbol">:x</span>
+ <span class="hljs-number">5</span>  
+
+julia&gt; <span class="hljs-symbol">:</span>(x = <span class="hljs-number">5</span>).args[<span class="hljs-number">1</span>]
+<span class="hljs-symbol">:x</span>
+</code></pre><p>下面是完整的实现，后面是解释。
+让我们看看这在代码中意味着什么:</p>
+<pre><code><span class="hljs-comment"># Return a list of all variables used on the left-hand-side of assignment (=)</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Arguments:</span>
+<span class="hljs-comment">#   e: an Expr representing a Method, as from code_typed</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Returns:</span>
+<span class="hljs-comment">#   a Set{Symbol}, where each element appears on the LHS of an assignment in e.</span>
+<span class="hljs-comment">#</span>
+function find_lhs_variables(<span class="hljs-symbol">e:</span><span class="hljs-symbol">:Expr</span>)
+  output = <span class="hljs-constant">Set</span>{<span class="hljs-constant">Symbol</span>}()
+  <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> body(e)
+    <span class="hljs-keyword">if</span> <span class="hljs-constant">Base</span>.is_expr(ex,<span class="hljs-symbol">:</span>(=))
+      push!(output,ex.args[<span class="hljs-number">1</span>])
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">return</span> output
+<span class="hljs-keyword">end</span>
+</code></pre><pre><code>  output = <span class="hljs-built_in">Set</span>{<span class="hljs-built_in">Symbol</span>}()
+</code></pre><p>我们有一组符号，这些是我们在LHS上找到的变量名。</p>
+<pre><code>  <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> body(e)
+    <span class="hljs-keyword">if</span> <span class="hljs-constant">Base</span>.is_expr(ex,<span class="hljs-symbol">:</span>(=))
+      push!(output,ex.args[<span class="hljs-number">1</span>])
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre><p>我们没有深入地挖掘表达式，因为代码类型化AST是相当平坦的;循环和ifs已经被转换为用于控制流的gotos的平面语句。在函数调用的参数中不会有任何隐藏的任务。如果在等号左边有一个符号，那么这段代码就会失败。这就忽略了两个特殊的边界情况:数组访问(如5，它将被表示为a:ref表达式)和属性(如a。头，它将被表示为a。表达式)。这些仍然总是有相关的符号作为它们的args中的第一个值，它可能只是被隐藏了一点(比如在a.property.name.海德。其他属性)。这个代码不能处理这些情况，但是if语句中的几行代码可以解决这个问题。</p>
+<pre><code>      <span class="hljs-keyword">push</span>!(output,ex.args[<span class="hljs-number">1</span>])
+</code></pre><p>当我们发现LHS的变量用法时，我们会推！将变量名放入到集合中。集合将确保我们只有一个每个名称的副本。</p>
+<h3 id="-rhs-">发现RHS用法</h3>
+<p>为了找到所有其他的变量用法，我们还需要查看每个Expr。这涉及到更多的问题，因为我们关心的是所有的Exprs，而不仅仅是:(1)，因为我们需要挖掘嵌套的Exprs(来处理嵌套的函数调用)。</p>
+<p>下面是完整的实现，下面是解释。</p>
+<pre><code># Given an Expression, finds variables used in it (on right-hand-side)
+#
+# Arguments: e: an Expr
+#
+# Returns: a <span class="hljs-operator"><span class="hljs-keyword">Set</span>{Symbol}, <span class="hljs-keyword">where</span> <span class="hljs-keyword">each</span> e <span class="hljs-keyword">is</span> used <span class="hljs-keyword">in</span> a rhs expression <span class="hljs-keyword">in</span> e
+#
+<span class="hljs-keyword">function</span> find_rhs_variables(e::Expr)
+  <span class="hljs-keyword">output</span> = <span class="hljs-keyword">Set</span>{Symbol}()
+
+  <span class="hljs-keyword">if</span> e.head == :lambda
+    <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> body(e)
+      <span class="hljs-keyword">union</span>!(<span class="hljs-keyword">output</span>,find_rhs_variables(ex))
+    <span class="hljs-keyword">end</span>
+  elseif e.head == :(=)
+    <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> e.args[<span class="hljs-number">2</span>:<span class="hljs-keyword">end</span>]  # skip lhs
+      <span class="hljs-keyword">union</span>!(<span class="hljs-keyword">output</span>,find_rhs_variables(ex))
+    <span class="hljs-keyword">end</span>
+  elseif e.head == :<span class="hljs-keyword">return</span>
+    <span class="hljs-keyword">output</span> = find_rhs_variables(e.args[<span class="hljs-number">1</span>])
+  elseif e.head == :<span class="hljs-keyword">call</span>
+    <span class="hljs-keyword">start</span> = <span class="hljs-number">2</span>  # skip <span class="hljs-keyword">function</span> name
+    e.args[<span class="hljs-number">1</span>] == TopNode(:box) &amp;&amp; (<span class="hljs-keyword">start</span> = <span class="hljs-number">3</span>)  # skip type name
+    <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> e.args[<span class="hljs-keyword">start</span>:<span class="hljs-keyword">end</span>]
+      <span class="hljs-keyword">union</span>!(<span class="hljs-keyword">output</span>,find_rhs_variables(ex))
+    <span class="hljs-keyword">end</span>
+  elseif e.head == :<span class="hljs-keyword">if</span>
+   <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> e.args # want <span class="hljs-keyword">to</span> <span class="hljs-keyword">check</span> condition, too
+     <span class="hljs-keyword">union</span>!(<span class="hljs-keyword">output</span>,find_rhs_variables(ex))
+   <span class="hljs-keyword">end</span>
+  elseif e.head == :(::)
+    <span class="hljs-keyword">output</span> = find_rhs_variables(e.args[<span class="hljs-number">1</span>])
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">output</span>
+<span class="hljs-keyword">end</span></span>
+</code></pre><p>这个函数的主要结构是一个大型的if-else语句，每个案例处理一个不同的头部符号。</p>
+<pre><code>  output = <span class="hljs-built_in">Set</span>{<span class="hljs-built_in">Symbol</span>}()
+</code></pre><p>输出是变量名的集合，我们将在函数的末尾返回。由于我们只关心每个变量至少被读取一次的事实，所以使用Set使我们不必担心每个名称的惟一性。</p>
+<pre><code>  <span class="hljs-keyword">if</span> e.head == <span class="hljs-symbol">:lambda</span>
+    <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> body(e)
+      union!(output,find_rhs_variables(ex))
+    <span class="hljs-keyword">end</span>
+</code></pre><p>这是if-else语句中的第一个条件。lambda代表了函数的主体。我们在定义的主体上递归，它应该在定义中得到所有RHS变量的用法。</p>
+<pre><code>  elseif e.head == <span class="hljs-symbol">:</span>(=)
+    <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> e.args[<span class="hljs-number">2</span><span class="hljs-symbol">:end</span>]  <span class="hljs-comment"># skip lhs</span>
+      union!(output,find_rhs_variables(ex))
+    <span class="hljs-keyword">end</span>
+</code></pre><p>如果头是:(=)，那么表达式就是一个赋值。我们跳过了arg的第一个元素因为这是分配给的变量。对于剩下的表达式，我们递归地查找RHS变量并将它们添加到我们的集合中。</p>
+<pre><code>  <span class="hljs-keyword">elseif</span> e.head == :<span class="hljs-keyword">return</span>
+    output = find_rhs_variables(e.args[<span class="hljs-number">1</span>])
+</code></pre><p>如果这是一个返回语句，那么args的第一个元素就是返回值的表达式;我们将在这个集合中添加任何变量</p>
+<pre><code>  elseif e.head == :<span class="hljs-operator"><span class="hljs-keyword">call</span>
+    # skip <span class="hljs-keyword">function</span> name
+    <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> e.args[<span class="hljs-number">2</span>:<span class="hljs-keyword">end</span>]
+      <span class="hljs-keyword">union</span>!(<span class="hljs-keyword">output</span>,find_rhs_variables(ex))
+    <span class="hljs-keyword">end</span></span>
+</code></pre><p>对于函数调用，我们希望获取所有参数中使用的所有变量。我们跳过函数名，这是args的第一个元素。</p>
+<pre><code>  elseif e.head == <span class="hljs-symbol">:if</span>
+   <span class="hljs-keyword">for</span> ex <span class="hljs-keyword">in</span> e.args <span class="hljs-comment"># want to check condition, too</span>
+     union!(output,find_rhs_variables(ex))
+   <span class="hljs-keyword">end</span>
+</code></pre><p>表示if语句的Expr具有头值:if。我们想从if语句的主体中获取变量的用法，因此我们递归到args的每一个元素上。</p>
+<pre><code>  elseif e.head == :(::)
+    output = find_rhs_variables(e.args[1])
+  <span class="hljs-operator"><span class="hljs-keyword">end</span></span>
+</code></pre><p>他:(:)操作符用于添加类型注释。第一个参数是带注释的表达式或变量;我们检查带注释的表达式中的变量用法。</p>
+<pre><code><span class="hljs-keyword">return</span> output
+</code></pre><p>在函数的末尾，我们返回了RHS变量的集合。</p>
+<p>还有一些代码可以简化上面的方法。因为上面的版本只处理Exprs，但是递归的一些值可能不是Exprs，所以我们需要更多的方法来处理其他可能的类型。</p>
+<pre><code># Recursive Base Cases, to simplify control flow <span class="hljs-keyword">in</span> the Expr version
+find_rhs_variables(a) = <span class="hljs-built_in">Set</span>{<span class="hljs-built_in">Symbol</span>}()  # unhandled, should be immediate val e.g. Int
+find_rhs_variables(s::<span class="hljs-built_in">Symbol</span>) = <span class="hljs-built_in">Set</span>{<span class="hljs-built_in">Symbol</span>}([s])
+find_rhs_variables(s::SymbolNode) = <span class="hljs-built_in">Set</span>{<span class="hljs-built_in">Symbol</span>}([s.name])
+</code></pre><p>把它放在一起</p>
+<p>既然我们已经定义了上面定义的两个函数，那么我们就可以使用它们来查找那些只能从或者仅被写入的变量。找到它们的功能将被称为“不使用本地”的当地人。</p>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unused_locals</span><span class="hljs-params">(e::Expr)</span>
+  <span class="hljs-title">lhs</span> = <span class="hljs-title">find_lhs_variables</span><span class="hljs-params">(e)</span>
+  <span class="hljs-title">rhs</span> = <span class="hljs-title">find_rhs_variables</span><span class="hljs-params">(e)</span>
+  <span class="hljs-title">setdiff</span><span class="hljs-params">(lhs,rhs)</span>
+<span class="hljs-title">end</span></span>
+</code></pre><p>unused本地人将返回一组变量名。很容易编写一个函数来确定unused本地人的输出是否被认为是“通过”。如果集合是空的，方法就会通过。如果函数的所有方法都通过，那么函数就会通过。下面的函数check本地人实现了这个逻辑。</p>
+<pre><code><span class="hljs-function">check_locals</span>(f<span class="hljs-value">::Callable) = <span class="hljs-function">all</span>([<span class="hljs-function">check_locals</span>(e) for e in <span class="hljs-function">code_typed</span>(f)])
+<span class="hljs-function">check_locals</span>(e::Expr) = <span class="hljs-function">isempty</span>(<span class="hljs-function">unused_locals</span>(e))</span>
+</code></pre><h2 id="-">结论</h2>
+<p>我们已经对基于类型和基于变量用法的茱莉亚代码进行了两种静态分析。</p>
+<p>静态类型语言已经完成了我们基于类型的分析所做的工作;额外的基于类型的静态分析在动态类型语言中非常有用。已经有(主要是研究)项目为包括Python、Ruby和Lisp在内的语言构建静态类型推断系统。这些系统通常是围绕可选的类型注释构建的;当您需要时，您可以拥有静态类型，而当您不需要时，则会返回到动态类型。这对于将一些静态类型集成到现有的代码库中尤其有用。</p>
+<p>非类型的检查，例如我们的变量使用，都适用于动态和静态类型的语言。但是，许多静态类型的语言，比如C++和Java，都要求您声明变量，并且已经给出了我们创建的基本警告。仍然有一些可以编写的自定义检查;例如，检查特定于项目的样式指南或基于安全策略的额外的安全预防措施。</p>
+<p>虽然茱莉亚确实有很好的工具来支持静态分析，但这并不是唯一的方法。当然，Lisp很有名，因为代码是嵌套列表的数据结构，所以在AST中很容易得到。Java也公开了它的AST，尽管AST比Lisp要复杂得多。一些语言或语言工具链的设计目的不是为了让用户在内部的表示中闲逛。对于开放源码的工具链(特别是那些注释良好的工具)，一个选择是添加钩子到环境中，让您访问AST。</p>
+<p>在这种情况下，最终的回退是自己编写一个解析器;这是在可能的情况下尽量避免。要覆盖大多数编程语言的语法，需要大量的工作，而且您必须自己更新它，因为新特性是添加到语言中的(而不是从上游自动更新)。根据您想要做的检查，您可能只需要解析某些行或语言特性的子集，这将极大地降低编写您自己的解析器的成本。</p>
+<p>希望您对静态分析工具的理解能够帮助您理解您在代码中使用的工具，并可能激发您编写自己的代码。</p>
+</div>
+</body></html>
